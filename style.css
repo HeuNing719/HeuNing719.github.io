@@ -182,6 +182,12 @@ h3 {
     gap: 24px;
 }
 
+.project-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
 .project-item {
     padding: 32px;
     background-color: #fafafa;
@@ -189,7 +195,7 @@ h3 {
     transition: all 0.25s ease;
 }
 
-.project-item:hover {
+.project-link:hover .project-item {
     border-color: #ccc;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     transform: translateY(-2px);
