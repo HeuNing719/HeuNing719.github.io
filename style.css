@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* 滚动动画 */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background-color: #fafafa;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 40px;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #111;
+    letter-spacing: -0.02em;
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+#hero {
+    background-color: #fff;
+    padding: 120px 40px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+#hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    width: 60px;
+    height: 3px;
+    background-color: #111;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #111;
+    letter-spacing: -0.03em;
+}
+
+.hero-content p {
+    font-size: 1.125rem;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.hero-content p:first-of-type {
+    color: #888;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+}
+
+#about {
+    background-color: #fff;
+    padding: 80px 40px;
+    border-bottom: 1px solid #eee;
+}
+
+.about-content {
+    max-width: 700px;
+    color: #555;
+    font-size: 1.05rem;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+#education {
+    background-color: #fafafa;
+    padding: 80px 40px;
+    border-bottom: 1px solid #eee;
+}
+
+.education-link {
+    display: block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.education-item {
+    max-width: 800px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.education-link:hover .education-item {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-color: #e0e0e0;
+}
+
+.education-content {
+    flex: 1;
+}
+
+.education-image {
+    flex-shrink: 0;
+    width: 100px;
+}
+
+.education-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.education-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.education-item p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+.education-item p:first-of-type {
+    color: #888;
+}
+
+#projects {
+    background-color: #fff;
+    padding: 80px 40px;
+    border-bottom: 1px solid #eee;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.project-item {
+    padding: 32px;
+    background-color: #fafafa;
+    border: 1px solid #eee;
+    transition: all 0.25s ease;
+}
+
+.project-item:hover {
+    border-color: #ccc;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+}
+
+.project-item h3 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.project-item p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+#skills {
+    background-color: #fafafa;
+    padding: 80px 40px;
+    border-bottom: 1px solid #eee;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.skill-item {
+    padding: 0;
+}
+
+.skill-item h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #888;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.skill-item ul {
+    list-style: none;
+}
+
+.skill-item li {
+    color: #444;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    padding-left: 16px;
+    position: relative;
+}
+
+.skill-item li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: #ccc;
+    border-radius: 50%;
+}
+
+#resume {
+    background-color: #fff;
+    padding: 80px 40px;
+    border-bottom: 1px solid #eee;
+}
+
+.resume-content {
+    max-width: 500px;
+}
+
+.resume-content p {
+    color: #666;
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+}
+
+.resume-button {
+    display: inline-block;
+    background-color: #111;
+    color: #fff;
+    padding: 16px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: all 0.2s ease;
+    border: 2px solid #111;
+}
+
+.resume-button:hover {
+    background-color: #fff;
+    color: #111;
+}
+
+#contact {
+    background-color: #111;
+    color: #fff;
+    padding: 80px 40px;
+}
+
+.contact-content {
+    max-width: 500px;
+}
+
+.contact-content p {
+    color: #aaa;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+#contact h2 {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 60px 24px;
+    }
+
+    #hero {
+        padding: 80px 24px;
+    }
+
+    #hero::after {
+        left: 24px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 32px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    #about, #education, #projects, #skills, #resume, #contact {
+        padding: 60px 24px;
+    }
+
+    #hero {
+        padding: 60px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 48px 20px;
+    }
+
+    #hero {
+        padding: 60px 20px;
+    }
+
+    #hero::after {
+        left: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.35rem;
+    }
+
+    #about, #education, #projects, #skills, #resume, #contact {
+        padding: 48px 20px;
+    }
+
+    #hero {
+        padding: 48px 20px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .education-item {
+        flex-direction: row;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .education-image {
+        width: 80px;
+    }
+
+    .resume-button {
+        padding: 14px 32px;
+        width: 100%;
+        text-align: center;
+    }
+}

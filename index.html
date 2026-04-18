@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hero 首页横幅 -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>宁浩宇</h1>
+            <p>本科生 | 药学</p>
+            <p>欢迎访问我的个人主页</p>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about" class="fade-in">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>我是一名本科生，就读于北京大学药学专业。我对化学生物学充满热情，喜欢绘画与音乐。在大学期间，我积极参与学校组织的各项活动，努力提升自己的专业技能和综合素质。</p>
+                <p>我希望通过此个人主页展示我的学习成果、项目经验和个人技能，与更多志同道合的人交流学习。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="fade-in">
+        <div class="container">
+            <h2>Education</h2>
+            <a href="https://www.bjmu.edu.cn/" target="_blank" class="education-link">
+                <div class="education-item">
+                    <div class="education-content">
+                        <h3>北京大学医学部</h3>
+                        <p> 药学 | 2024 - 2030</p>
+                        <p>GPA: 3.5/4.0</p>
+                        <p>相关课程: 有机化学, 细胞与分子生物学, 药理学</p>
+                    </div>
+                    <div class="education-image">
+                        <img src="assets/北京大学 (1).png" alt="北京大学">
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="fade-in">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3>制作数据分析报告</h3>
+                    <p>项目描述：利用临床医学公开数据库PIC中的数据进行分析</p>
+                    <p>技术栈：Python, pandas, numpy, matplotlib, seaborn, scipy</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="fade-in">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>专业技能</h3>
+                    <ul>
+                        <li>药理学分析</li>
+                        <li>有机化学分析</li>
+                        <li>药物制剂技术</li>
+                    </ul>
+                </div>
+                <div class="skill-item">
+                    <h3>工具技能</h3>
+                    <ul>
+                        <li>HPLC & MS</li>
+                        <li>Origin & SPSS</li>
+                        <li>PubMed & Google Scholar</li>
+                    </ul>
+                </div>
+                <div class="skill-item">
+                    <h3>其他技能</h3>
+                    <ul>
+                        <li>跨学科交流</li>
+                        <li>法律与伦理意识</li>
+                        <li>批判性思维</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="fade-in">
+        <div class="container">
+            <h2>Resume</h2>
+            <div class="resume-content">
+                <p>点击下方按钮查看本人简历</p>
+                <a href="./resume.pdf" class="resume-button" target="_blank">下载简历</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="fade-in">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-content">
+                <p>邮箱：2410307218@bjmu.edu.cn</p>
+                <p>Github：HeuNing719</p>
+                <p>电话：18308104661</p>
+                <p>地址：中国，北京</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 滚动动画效果
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
