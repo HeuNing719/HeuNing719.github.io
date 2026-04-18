@@ -118,6 +118,11 @@ h3 {
     display: block;
     text-decoration: none;
     transition: all 0.3s ease;
+    color: inherit;
+}
+
+.education-link h3 {
+    text-decoration: none !important;
 }
 
 .education-item {
@@ -186,6 +191,10 @@ h3 {
     display: block;
     text-decoration: none;
     color: inherit;
+}
+
+.project-link h3 {
+    text-decoration: none !important;
 }
 
 .project-item {
